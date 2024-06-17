@@ -1,0 +1,46 @@
+-var path = '';
+-var head_url = '';
+-var head_title = '«Защити себя и своих близких»';
+-var head_description = 'Авторские практикумы по постановке защиты от Анастасии Петровой';
+//-var head_img = 'img/banner.jpg';
+-var styles = path+'css/styles.min.css';
+-var fav_ico = path+'favicon.ico';
+-var fav_png = path+'favicon.png';
+-var libs = path+'js/libs.min.js';
+-var scripts = path+'js/scripts.min.js';
+-var noref = true
+//- -var action = '';
+//- -var group = '';
+//- -var formId = '';
+//- -var formVc = '';
+//- -var footer_title = true
+//- -var oferta = 'https://mastervision.su/oferta.docx'
+-var ak = true
+
+mixin img(cl,src,alt)
+	img(class=cl src!=src alt=alt)
+mixin gt(cl,h3)
+	.general-title(class=cl)!=h3
+mixin b(n, cl ,href, p, id, target)
+		if n
+			a.button(class=cl href=href onclick="awoOpenFormModal("+n+")")!=p
+		else
+		a.button(class=cl href=href id=id target=target)!=p
+
+doctype html
+html(lang="ru")
+	head
+		include pug/head
+		include pug/scripts/head_scripts
+	body
+		include pug/scripts/body_top_scripts
+		.wrapper
+			include pug/main/1-main
+			include pug/main/2-for
+			include pug/main/3-spheres
+			include pug/main/4-plan
+			include pug/main/5-author
+			include pug/main/6-prices
+		include pug/base/3-scripts
+		include pug/scripts/chat
+		include pug/scripts/body_bottom_scripts
